@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap')
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background-color: #F2F2F2;
+  font-size: 22px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.arrow.active{
+  rotate: 180deg;
+  color: #1db954;
+}
+
+.swiper-container {
+  position: relative;
+}
+.swiper-container::before,
+.swiper-container::after {
+  background: linear-gradient(to right, #5ABBC4 0%, rgba(255, 255, 255, 0) 100%);
+  content: "";
+  height: 100%;
+  position: absolute;
+  width: 100px;
+  z-index: 2;
+}
+.swiper-container::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+.swiper-container::before {
+  left: 0;
+  top: 0;
+}
