@@ -8,19 +8,20 @@ import 'swiper/css';
 import 'swiper/css/autoplay'
 
 const Testimoni = () => {
+  const view = window.innerWidth <= 698 
   return (
     <section className="flex justify-center items-center pt-[50px] overflow-hidden">
-        <Card className="w-[1312px] h-[600px] flex items-center bg-[#5ABCC5] rounded-[58px] pl-[80px]">
-            <div className="text-[#FFF] pb-[100px]">
-              <h1 className="text-[48px] w-[400px] leading-3 font-bold">Testimoni klien</h1>
-              <p className="text-[20px] w-[300px] pb-[40px]">Dipercaya klien untuk hasil yang bagus dan terjangkau</p>
+        <Card className="w-full lg:w-[1312px] h-screen lg:h-[600px] flex flex-col lg:flex-row items-center bg-[#5ABCC5] rounded-[32px] lg:rounded-[58px] lg:pl-[80px]">
+            <div className="text-[#FFF] text-center pb-[50px] lg:pb-[100px]">
+              <h1 className="text-[32px] lg:text-[48px] w-[400px] leading-3 font-bold">Testimoni klien</h1>
+              <p className="text-[18px] lg:text-[20px] m-auto lg:m-0 w-[300px] pb-[40px]">Dipercaya klien untuk hasil yang bagus dan terjangkau</p>
               <button className="w-[233px] h-[42px] rounded-[8px] bg-[#FFF] border-none text-[20px]">Lihat selengkapnya</button>
             </div>
             <div className="w-full flex-[1.1]">
               <Swiper 
                     modules={[Autoplay]}
-                    spaceBetween={-180}
-                    slidesPerView={3}
+                    spaceBetween={view ? 0 : -180}
+                    slidesPerView={view ? 1 : 3}
                     grabCursor
                     loop={true}
                     autoplay={{delay: 1500}}
@@ -29,7 +30,7 @@ const Testimoni = () => {
               >
                 {dataTesti.map((testi, index) => (
                   <SwiperSlide key={index}>
-                    <Card className="w-[336px] h-[432px] rounded-b-[24px] overflow-hidden"
+                    <Card className="max-w-[336px] max-h-[432px] rounded-b-[24px] overflow-hidden"
                       style={{
                         backgroundImage: `url(${testi.img})`,
                         backgroundSize: 'cover',

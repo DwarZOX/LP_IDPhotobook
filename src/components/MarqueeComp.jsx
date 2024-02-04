@@ -26,8 +26,8 @@ const brandLogoList = [
 
 const MarqueeComp = () => {
   return (
-    <div className="w-full h-[100px] flex items-center bg-[#FBFFF4]">
-          <span className="pl-[32px] text-[14px]">Diliput berbagai media nasional:</span>
+    <div className="w-full h-[100px] text-center lg:flex items-center bg-[#FBFFF4]">
+          <span className="md:pl-[32px] text-[14px]">Diliput berbagai media nasional:</span>
           <Marquee 
             className="w-full flex gap-10 flex-[1.9]"
             pauseOnHover

@@ -5,12 +5,12 @@ import { dataFAQ } from "../constant";
 const AccordionItem = ({ question, answer, isOpen, onClick }) => {
   const contentHeight = useRef();
   return (
-    <div className="w-[793px] overflow-hidden border-b-2">
+    <div className="w-full lg:w-[793px] overflow-hidden border-b-2">
       <button
-        className={`w-full h-[80px] rounded-[26px] bg-[#FBFFF4] px-[40px] flex items-center justify-between border-none cursor-pointer transition-all ease-in-out duration-700 ${isOpen ? "rounded-b-none" : ""}`}
+        className={`w-full h-[80px] rounded-[26px] bg-[#FFF] px-[40px] flex items-center justify-between border-none cursor-pointer transition-all ease-in-out duration-700 ${isOpen ? "rounded-b-none" : ""}`}
         onClick={onClick}
       >
-        <p className="text-[20px] font-bold">{question}</p>
+        <p className="text-[18px] lg:text-[20px] font-bold">{question}</p>
         <IoIosArrowRoundDown className={`arrow text-[2rem] transition-all ease-in-out duration-500 ${isOpen ? "active" : ""}`} />
       </button>
 
@@ -19,7 +19,7 @@ const AccordionItem = ({ question, answer, isOpen, onClick }) => {
         className="px-[40px] pt-[10px] pb-[15px] transition-all ease-in-out duration-500 rounded-b-[26px]"
         style={
           isOpen
-            ? { height: contentHeight.current.scrollHeight, backgroundColor: "#FBFFF4" }
+            ? { height: contentHeight.current.scrollHeight, backgroundColor: "#FFF" }
             : { height: "0px", backgroundColor: "transparent" }
         }
       >
@@ -37,7 +37,7 @@ const Accordion = () => {
   };
 
   return (
-    <div className="max-w-[650px]">
+    <div className="w-full max-w-[650px]">
       {dataFAQ.map((item, index) => (
         <AccordionItem
           key={index}
